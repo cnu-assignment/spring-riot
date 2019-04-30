@@ -4,7 +4,31 @@
 > 201702063 이지현
 
 > 201702019 박채연
-
+src
+main
+java
+org
+cnu
+realcoding
+riotapi
+RiotapiApplication.java
+resources
+test## <structure>
+- API // 외부 api를 호출하는 녀석들
+- CONFIG // 설정을 해야한다면 여기에
+  - httpconfig
+  - swaggerconfig
+  - mongoconfig
+- CONTROLLER // 클라이언트와 request / response(로직 전까지 준비물)
+  - controller
+- DOMAIN // VO(DTO) 오브젝트 getter, setter 나누어줌 - 정보은닉
+  - summonerName
+  - encryptedSummonerId
+- REPOSITORY // DB쪽 호출하는 녀석들
+  - repository
+- SERVICE // 비즈니스 로직 처리(domain 객체 조합 후 결과만들어 반환)
+  - service
+- spring-api.java // 실행될 때 세부적인 것 포함
 ## <과제 목표>
 -  Riot Games API 호출하고 결과를 DB에 저장
   - https://developer.riotgames.com 방문
