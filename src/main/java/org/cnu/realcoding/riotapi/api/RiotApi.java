@@ -16,7 +16,7 @@ public class RiotApi {
     public String getSummonerName(String userName) {
         return restTemplate.exchange(requestSummonerNameUrl, HttpMethod.GET, null, String.class, userName, "RGAPI-733e4766-5acf-4583-8c9f-9cba2ba6e9f5").getBody();
     }
-    public String getEncryptedSummonerId(String encryptedId){
+    public String getLeagueInformation(String encryptedId){
         return restTemplate.exchange(requestEncryptedSummonerIdUrl, HttpMethod.GET, null, String.class, encryptedId, "RGAPI-733e4766-5acf-4583-8c9f-9cba2ba6e9f5").getBody();
     }
 }
