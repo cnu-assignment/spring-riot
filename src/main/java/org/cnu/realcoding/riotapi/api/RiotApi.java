@@ -13,7 +13,7 @@ public class RiotApi {
     private String requestSummonerNameUrl = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summonerName}?api_key={apiKey}";
     private String requestEncryptedSummonerIdUrl="https://kr.api.riotgames.com/lol/league/v4/positions/by-summoner/{encryptedSummonerId}?api_key={apiKey}";
 
-    public String getSummonerName(String userName) {
+    public String getEncryptedId(String userName) {
         return restTemplate.exchange(requestSummonerNameUrl, HttpMethod.GET, null, String.class, userName, "RGAPI-733e4766-5acf-4583-8c9f-9cba2ba6e9f5").getBody();
     }
     public String getLeagueInformation(String encryptedId){
