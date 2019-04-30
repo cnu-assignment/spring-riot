@@ -1,3 +1,4 @@
+// 실행될 때 세부적인 것 포함
 package org.cnu.realcoding.riotapi;
 
 import org.springframework.boot.SpringApplication;
