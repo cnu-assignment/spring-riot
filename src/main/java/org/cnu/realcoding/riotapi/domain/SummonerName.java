@@ -11,6 +11,4 @@ public class SummonerName {
     private String id;
     private String accountId;
 
-
-
 }
