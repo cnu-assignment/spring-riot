@@ -4,6 +4,7 @@ package org.cnu.realcoding.riotapi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+// @Configuration + @EvableAutoConfiguration + @ComponentScan 이거 세가지를 한번에 묶어놓은
 @SpringBootApplication
 public class RiotapiApplication {
 
