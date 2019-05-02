@@ -14,6 +14,8 @@ public class RiotApi {
     @Autowired
     private RestTemplate restTemplate;
 
+    private String apiKey = "RGAPI-ac759e9b-6a76-48e2-aab2-ab1c9332cb29";
+
     private String requestSummonerNameUrl = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summonerName}?api_key={apiKey}";
     private String requestEncryptedSummonerIdUrl="https://kr.api.riotgames.com/lol/league/v4/positions/by-summoner/{encryptedSummonerId}?api_key={apiKey}";
 
@@ -21,10 +23,10 @@ public class RiotApi {
         // restTemplate.exchange() : Http Header 를 수정할 수 있고 결과를 Http ResponseEntity로 반환 받는다.
         // .getBody() : body값을 넘겨받음
         // RequestEntity를 사용해서 요청 파라미터로 받을 수 있음
-        return restTemplate.exchange(requestSummonerNameUrl, HttpMethod.GET, null, SummonerName.class, userName, "RGAPI-733e4766-5acf-4583-8c9f-9cba2ba6e9f5").getBody();
+        return restTemplate.exchange(requestSummonerNameUrl, HttpMethod.GET, null, SummonerName.class, userName, apiKey).getBody();
     }
 
     public EncryptedSummonerId getLeagueInformation(String encryptedId){
-        return restTemplate.exchange(requestEncryptedSummonerIdUrl, HttpMethod.GET, null, EncryptedSummonerId.class, encryptedId, "RGAPI-733e4766-5acf-4583-8c9f-9cba2ba6e9f5").getBody();
+        return restTemplate.exchange(requestEncryptedSummonerIdUrl, HttpMethod.GET, null, EncryptedSummonerId.class, encryptedId, apiKey).getBody();
     }
 }

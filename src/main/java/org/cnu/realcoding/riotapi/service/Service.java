@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
 
+@org.springframework.stereotype.Service
 public class Service {
     // 의존관계를 자동설정할 때 사용하며 타입을 이용하여 의존하는 객체를 삽입
     @Autowired
