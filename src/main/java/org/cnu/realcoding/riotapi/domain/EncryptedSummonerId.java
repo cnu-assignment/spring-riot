@@ -7,7 +7,7 @@ public class EncryptedSummonerId {
     private String queueType;
     private String summonerName;
     private boolean hotStreak;
-    private MiniSeriesDTO  miniSeries;
+    private MiniSeriesDTO miniSeries;
     private int wins;
     private boolean veteran;
     private int losses;
@@ -18,6 +18,7 @@ public class EncryptedSummonerId {
     private String tier;
     private String summonerId;
     private int leaguePoints;
+
 
     // private String leagueName;
     // private String position;
