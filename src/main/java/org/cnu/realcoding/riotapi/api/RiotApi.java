@@ -14,7 +14,7 @@ public class RiotApi {
     @Autowired
     private RestTemplate restTemplate;
 
-    private String apiKey = "RGAPI-ac759e9b-6a76-48e2-aab2-ab1c9332cb29";
+    private String apiKey = "RGAPI-ee178823-bbbf-4b28-99ee-e829cb31b9d4";
 
     private String requestSummonerNameUrl = "https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summonerName}?api_key={apiKey}";
     private String requestEncryptedSummonerIdUrl="https://kr.api.riotgames.com/lol/league/v4/positions/by-summoner/{encryptedSummonerId}?api_key={apiKey}";
