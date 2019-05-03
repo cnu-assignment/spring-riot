@@ -38,7 +38,7 @@ public class Controller {
     public EncryptedSummonerId getLeagueInfoByName(@RequestParam(value="name", defaultValue="false") String name) throws IOException {
         this.insertDataToDB(name);
         String idOfSummoner = riotApi.getEncryptedId(name).getId();
-        return riotApi.getLeagueInformation(name);
+        return riotApi.getLeagueInformation(idOfSummoner);
     }
 
     private void insertDataToDB(String name) throws IOException {
