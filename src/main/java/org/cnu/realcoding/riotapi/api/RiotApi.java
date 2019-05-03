@@ -1,11 +1,14 @@
 package org.cnu.realcoding.riotapi.api;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.cnu.realcoding.riotapi.domain.EncryptedSummonerId;
 import org.cnu.realcoding.riotapi.domain.SummonerName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.io.IOException;
 
 // 비즈니스로직이 들어가는 Service 빈 등록
 @Service
@@ -26,7 +29,17 @@ public class RiotApi {
         return restTemplate.exchange(requestSummonerNameUrl, HttpMethod.GET, null, SummonerName.class, userName, apiKey).getBody();
     }
 
-    public EncryptedSummonerId getLeagueInformation(String encryptedId){
-        return restTemplate.exchange(requestEncryptedSummonerIdUrl, HttpMethod.GET, null, EncryptedSummonerId.class, encryptedId, apiKey).getBody();
+    public EncryptedSummonerId getLeagueInformation(String encryptedId) throws IOException {
+
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonInString = restTemplate.exchange(requestEncryptedSummonerIdUrl, HttpMethod.GET, null, String.class, encryptedId, apiKey).getBody();
+
+        jsonInString = jsonInString.replace("[", "");
+        jsonInString = jsonInString.replace("]", "");
+
+        EncryptedSummonerId encryptedSummonerId = mapper.readValue(jsonInString,EncryptedSummonerId.class);
+        return encryptedSummonerId;
+
+
     }
 }
