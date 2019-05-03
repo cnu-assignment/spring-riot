@@ -25,7 +25,7 @@ public class Service {
 
     public void insertinMongoDB(String name) throws IOException {
         // idOfRiot이라는 문자열 변수 선언하고 riotApi 클래스의 getEncryptedId 메서드 실행
-        // ? .getId()가 뭔지 모르겠음..
+        // .getId()는 받은객체에서 id를 가져오는 것
         String idOfRiot = riotApi.getEncryptedId(name).getId();
         // 사용자 정의 데이터 타입으로 league 변수를 선언하고 riotApi 클래스의 getLeagueInformation 메서드를 실행
         EncryptedSummonerId league = this.riotApi.getLeagueInformation(idOfRiot);

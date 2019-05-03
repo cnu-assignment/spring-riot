@@ -4,21 +4,11 @@
 > 201702063 이지현
 
 > 201702019 박채연
-src
-main
-java
-org
-cnu
-realcoding
-riotapi
-RiotapiApplication.java
-resources
-test## <structure>
+
 - API // 외부 api를 호출하는 녀석들
 - CONFIG // 설정을 해야한다면 여기에
   - httpconfig
   - swaggerconfig
-  - mongoconfig
 - CONTROLLER // 클라이언트와 request / response(로직 전까지 준비물)
   - controller
 - DOMAIN // VO(DTO) 오브젝트 getter, setter 나누어줌 - 정보은닉
@@ -29,6 +19,7 @@ test## <structure>
 - SERVICE // 비즈니스 로직 처리(domain 객체 조합 후 결과만들어 반환)
   - service
 - spring-api.java // 실행될 때 세부적인 것 포함
+
 ## <과제 목표>
 -  Riot Games API 호출하고 결과를 DB에 저장
   - https://developer.riotgames.com 방문
@@ -55,3 +46,7 @@ test## <structure>
       - (2점) DB에 이미 소환사의 게임 성적 정보가 들어있다면, 이를 업데이트하세요
         - 힌트: mongoTemplate에 update() 메소드가 있음
       - (1점~2점) git 에 작업 과정을 남길 것 (중간 중간 커밋을 하셔야겠죠?)
+      
+## <과제 결과>
+![i1](https://ws1.sinaimg.cn/large/006tNc79gy1g2of3nr58qj319y0u044b.jpg)
+![i2](https://ws1.sinaimg.cn/large/006tNc79gy1g2of3n6l3wj31b80t2qak.jpg)
