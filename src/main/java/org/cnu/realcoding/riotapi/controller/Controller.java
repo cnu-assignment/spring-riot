@@ -24,9 +24,6 @@ public class Controller {
     private RiotApi riotApi;
 
     @Autowired
-    private DataRepository dataRepository;
-
-    @Autowired
     private Service service;
 
     @Autowired

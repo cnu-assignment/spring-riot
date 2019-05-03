@@ -28,15 +28,16 @@ public class RiotApi {
         // RequestEntity를 사용해서 요청 파라미터로 받을 수 있음
         return restTemplate.exchange(requestSummonerNameUrl, HttpMethod.GET, null, SummonerName.class, userName, apiKey).getBody();
     }
-
+    // IOException은 입출력 예외
     public EncryptedSummonerId getLeagueInformation(String encryptedId) throws IOException {
-
+        // ObjectMapper를 통해 java object를 json 문자열로 변환할 수 있다.
         ObjectMapper mapper = new ObjectMapper();
+        // Http ResponseEntity로 반환 받아 String 형 변수인 jsonInString에 넣음
         String jsonInString = restTemplate.exchange(requestEncryptedSummonerIdUrl, HttpMethod.GET, null, String.class, encryptedId, apiKey).getBody();
-
+        // String의 replace 메서드를 이용하여 '['와 ']'를 공백으로 치환
         jsonInString = jsonInString.replace("[", "");
         jsonInString = jsonInString.replace("]", "");
-
+        // jackson 라이브러리의 mapper.readValue 매서드로 JSON 문자열을 자바 객체로 변환함
         EncryptedSummonerId encryptedSummonerId = mapper.readValue(jsonInString,EncryptedSummonerId.class);
         return encryptedSummonerId;
 

@@ -6,18 +6,19 @@
 > 201702019 박채연
 
 - API // 외부 api를 호출하는 녀석들
+  - RiotApi
 - CONFIG // 설정을 해야한다면 여기에
-  - httpconfig
-  - swaggerconfig
+  - HttpConfig
+  - SwaggerConfig
 - CONTROLLER // 클라이언트와 request / response(로직 전까지 준비물)
-  - controller
+  - Controller
 - DOMAIN // VO(DTO) 오브젝트 getter, setter 나누어줌 - 정보은닉
-  - summonerName
-  - encryptedSummonerId
+  - EncryptedSummonerId
+  - SummonerName
 - REPOSITORY // DB쪽 호출하는 녀석들
-  - repository
+  - DataRepository
 - SERVICE // 비즈니스 로직 처리(domain 객체 조합 후 결과만들어 반환)
-  - service
+  - Service 
 - spring-api.java // 실행될 때 세부적인 것 포함
 
 ## <과제 목표>
