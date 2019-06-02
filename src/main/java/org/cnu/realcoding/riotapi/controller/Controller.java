@@ -26,8 +26,6 @@ public class Controller {
     @Autowired
     private Service service;
 
-    @Autowired
-    RestTemplate restTemplate;
 
     // @RequestMapping - 요청 URL을 어떤 메서드가 처리할지 mapping해주는 애노테이션
     // @GetMapping - @@RequestMapping(Method=RequestMethod.GET)과 같음
@@ -41,7 +39,6 @@ public class Controller {
     private void insertDataToDB(String name) throws IOException {
         this.service.insertinMongoDB(name);
     }
-
 
 
 
